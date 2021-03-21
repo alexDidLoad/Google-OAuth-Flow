@@ -1,0 +1,6 @@
+framework module Pods_Rentr {
+  umbrella header "Pods-Rentr-umbrella.h"
+
+  export *
+  module * { export * }
+}
