@@ -25,6 +25,7 @@
 		11786A6E2604716700599FAC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11786A6D2604716700599FAC /* Constants.swift */; };
 		11786A712604742B00599FAC /* RegisterNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11786A702604742B00599FAC /* RegisterNameVC.swift */; };
 		11786A752605ACE700599FAC /* SetNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11786A742605ACE700599FAC /* SetNameVC.swift */; };
+		11786A802609935400599FAC /* RentLendButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11786A7F2609935400599FAC /* RentLendButton.swift */; };
 		43F55B7C7349B71363226892 /* Pods_Rentr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E35ECBB6C5FDF2A9D807D5B6 /* Pods_Rentr.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		11786A6D2604716700599FAC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		11786A702604742B00599FAC /* RegisterNameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterNameVC.swift; sourceTree = "<group>"; };
 		11786A742605ACE700599FAC /* SetNameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNameVC.swift; sourceTree = "<group>"; };
+		11786A7F2609935400599FAC /* RentLendButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentLendButton.swift; sourceTree = "<group>"; };
 		47965FD7756C9A75BBC1C532 /* Pods-Rentr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rentr.release.xcconfig"; path = "Target Support Files/Pods-Rentr/Pods-Rentr.release.xcconfig"; sourceTree = "<group>"; };
 		B1B111851C61FFB5205A7798 /* Pods-Rentr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rentr.debug.xcconfig"; path = "Target Support Files/Pods-Rentr/Pods-Rentr.debug.xcconfig"; sourceTree = "<group>"; };
 		E35ECBB6C5FDF2A9D807D5B6 /* Pods_Rentr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rentr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,6 +138,7 @@
 				11786A2526042C7F00599FAC /* CustomTextField.swift */,
 				11786A2B2604320A00599FAC /* CustomAuthButton.swift */,
 				11786A31260438AF00599FAC /* CustomBoldLabel.swift */,
+				11786A7F2609935400599FAC /* RentLendButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				11786A172604038700599FAC /* AuthService.swift in Sources */,
 				11786A0B2604034B00599FAC /* LoginVC.swift in Sources */,
 				11786A2626042C7F00599FAC /* CustomTextField.swift in Sources */,
+				11786A802609935400599FAC /* RentLendButton.swift in Sources */,
 				11786A32260438AF00599FAC /* CustomBoldLabel.swift in Sources */,
 				11786A2F260434BF00599FAC /* FinalVC.swift in Sources */,
 				11786A6E2604716700599FAC /* Constants.swift in Sources */,

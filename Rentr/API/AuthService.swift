@@ -10,8 +10,6 @@ import Firebase
 
 struct AuthService {
     
-    
-    
     static func signInUser(withCredentials credentials: AuthCredential, completion: @escaping(User) -> Void) {
         
         Auth.auth().signIn(with: credentials) { _, error in
@@ -22,7 +20,6 @@ struct AuthService {
             guard let currentUser = Auth.auth().currentUser else { return }
             completion(currentUser)
         }
-        
     }
     
     
@@ -59,7 +56,6 @@ struct AuthService {
                 completion(firstAndLastExists)
             }
         }
-        
     }
     
     
@@ -84,7 +80,6 @@ struct AuthService {
                 }
             }
         }
-        
     }
     
 }

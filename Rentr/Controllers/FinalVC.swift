@@ -12,12 +12,17 @@ class FinalVC: UIViewController {
     
     //MARK: - UIComponents
     
-    private let finalScreenLabel = CustomBoldLabel(withTitle: "Final Screen")
     private let displayNameLabel = CustomBoldLabel(withTitle: "Display Name")
     
-    private let signOutButton: CustomAuthButton = {
-        let button = CustomAuthButton(withTitle: "Sign Out", titleColor: .white, backGroundColor: .systemRed)
-        button.addTarget(self, action: #selector(handleSignOut), for: .touchUpInside)
+    private let rentButton: RentLendButton = {
+        let button = RentLendButton(withTitle: "Rent", buttonColor: .systemGreen)
+        button.addTarget(self, action: #selector(handleRentTapped), for: .touchUpInside)
+        return button
+    }()
+    
+    private let lendButton: RentLendButton = {
+        let button = RentLendButton(withTitle: "Lend", buttonColor: .systemOrange)
+        button.addTarget(self, action: #selector(handleLendTapped), for: .touchUpInside)
         return button
     }()
     
@@ -34,10 +39,16 @@ class FinalVC: UIViewController {
         checkForFirstLastName()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        navigationController?.navigationBar.isHidden = true
+    }
+    
     convenience init(currentUser user: User, credentials: AuthCredential) {
         self.init()
         self.credentials      = credentials
-        displayNameLabel.text = user.email
+        title                 = user.displayName
     }
     
     //MARK: - Helpers
@@ -59,26 +70,41 @@ class FinalVC: UIViewController {
     }
     
     
+    private func configureNavBar() {
+        navigationController?.navigationBar.isHidden           = false
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.hidesBackButton                         = true
+        navigationItem.rightBarButtonItem                      = UIBarButtonItem(title: "Log out", style: .plain, target: self, action: #selector(handleSignOut))
+    }
+    
+    
     private func configureUI() {
+        configureNavBar()
+        
         view.backgroundColor = .white
         
-        view.addSubview(finalScreenLabel)
-        finalScreenLabel.centerX(inView: view)
-        finalScreenLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor,
-                                paddingTop: 30)
+        view.addSubview(rentButton)
+        rentButton.centerY(inView: view)
+        rentButton.anchor(leading: view.leadingAnchor,
+                          paddingLeading: 25)
         
-        view.addSubview(displayNameLabel)
-        displayNameLabel.centerX(inView: view)
-        displayNameLabel.centerY(inView: view, constant: -50)
-        
-        view.addSubview(signOutButton)
-        signOutButton.centerX(inView: view)
-        signOutButton.setDimensions(height: 30, width: 124)
-        signOutButton.anchor(top: displayNameLabel.bottomAnchor,
-                             paddingTop: 48)
+        view.addSubview(lendButton)
+        lendButton.centerY(inView: view)
+        lendButton.anchor(trailing: view.trailingAnchor,
+                          paddingTrailing: 25)
     }
     
     //MARK: - Selectors
+    
+    @objc private func handleRentTapped() {
+        print("rent")
+    }
+    
+    
+    @objc private func handleLendTapped() {
+        print("lend")
+    }
+    
     
     @objc private func handleSignOut() {
         
@@ -88,7 +114,6 @@ class FinalVC: UIViewController {
         } catch {
             print("DEBUG: Failed to sign user out")
         }
-        
     }
     
 }
